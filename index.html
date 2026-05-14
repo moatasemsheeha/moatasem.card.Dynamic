@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moatasem Sheha - CFO Digital Card</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --blue:#0b4fa3;
+    --deep-blue:#071d3a;
+    --orange:#ff8a1d;
+    --purple:#343b91;
+    --soft-bg:#f6f8fc;
+    --text:#172033;
+    --muted:#667085;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin:0;
+    min-height:100vh;
+    font-family:'Inter', Arial, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(255,138,29,0.20), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(52,59,145,0.28), transparent 34%),
+        linear-gradient(135deg, #06162d, #0b2347 45%, #111b3f);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:22px;
+}
+
+.card {
+    width:390px;
+    background:rgba(255,255,255,0.97);
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 28px 70px rgba(0,0,0,0.35);
+    animation: cardIn 0.85s ease both;
+    position:relative;
+}
+
+@keyframes cardIn {
+    from {
+        opacity:0;
+        transform:translateY(28px) scale(0.98);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.header {
+    position:relative;
+    padding:30px 28px 26px;
+    background:
+        linear-gradient(135deg, rgba(7,29,58,0.96), rgba(11,79,163,0.94) 55%, rgba(52,59,145,0.92));
+    color:white;
+    overflow:hidden;
+}
+
+.header::before {
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    right:-90px;
+    top:-90px;
+    background:rgba(255,138,29,0.22);
+    border-radius:50%;
+}
+
+.header::after {
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    left:-70px;
+    bottom:-80px;
+    background:rgba(255,255,255,0.08);
+    border-radius:50%;
+}
+
+.logo-panel {
+    position:relative;
+    z-index:2;
+    background:rgba(255,255,255,0.96);
+    border-radius:20px;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:82px;
+    box-shadow:0 14px 35px rgba(0,0,0,0.20);
+}
+
+.logo-panel img {
+    max-width:100%;
+    max-height:58px;
+    object-fit:contain;
+}
+
+.nova-badge {
+    position:relative;
+    z-index:2;
+    margin:18px auto 0;
+    width:118px;
+    height:54px;
+    background:rgba(255,255,255,0.95);
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 12px 30px rgba(0,0,0,0.18);
+}
+
+.nova-badge img {
+    max-width:92px;
+    max-height:38px;
+    object-fit:contain;
+}
+
+.content {
+    padding:28px 30px 30px;
+    text-align:center;
+}
+
+.eyebrow {
+    color:var(--orange);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+h1 {
+    margin:0;
+    color:var(--text);
+    font-size:29px;
+    line-height:1.15;
+    font-weight:800;
+    letter-spacing:-0.8px;
+}
+
+.position {
+    margin-top:10px;
+    color:var(--blue);
+    font-size:17px;
+    font-weight:700;
+}
+
+.company-line {
+    margin-top:6px;
+    color:var(--muted);
+    font-size:14px;
+    font-weight:500;
+    line-height:1.45;
+}
+
+.divider {
+    width:58px;
+    height:4px;
+    background:linear-gradient(90deg,var(--orange),var(--purple),var(--blue));
+    border-radius:50px;
+    margin:20px auto;
+}
+
+.tagline {
+    color:#475467;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:22px;
+}
+
+.actions {
+    display:grid;
+    gap:12px;
+}
+
+.btn {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 16px;
+    border-radius:15px;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    font-weight:800;
+    transition:0.25s ease;
+}
+
+.btn:hover {
+    transform:translateY(-2px);
+    box-shadow:0 12px 24px rgba(0,0,0,0.16);
+}
+
+.save {
+    background:linear-gradient(135deg,var(--orange),#ff6b1a);
+}
+
+.whatsapp {
+    background:#25D366;
+}
+
+.call {
+    background:linear-gradient(135deg,#0b4fa3,#343b91);
+}
+
+.linkedin {
+    background:#0077b5;
+}
+
+.footer {
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px solid #eef1f6;
+    color:#8a94a6;
+    font-size:11.5px;
+    line-height:1.5;
+}
+
+.corner-mark {
+    position:absolute;
+    right:18px;
+    bottom:16px;
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    background:linear-gradient(135deg, rgba(255,138,29,0.22), rgba(52,59,145,0.18));
+    transform:rotate(8deg);
+}
+
+@media (max-width:430px) {
+    .card {
+        width:100%;
+    }
+
+    .content {
+        padding:26px 24px 28px;
+    }
+
+    h1 {
+        font-size:27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="header">
+        <div class="logo-panel">
+            <img src="dynamic-logo-colors.png" alt="Dynamic Business Solutions">
+        </div>
+
+        <div class="nova-badge">
+            <img src="nova-logo.webp" alt="NovaHR">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="eyebrow">Chief Financial Officer</div>
+
+        <h1>Moatasem Sheha</h1>
+
+        <div class="position">CFO</div>
+
+        <div class="company-line">
+            Dynamic Business Solutions<br>
+            NovaHR
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="tagline">
+            Driving financial strategy, ERP transformation, and scalable SaaS growth.
+        </div>
+
+        <div class="actions">
+            <a class="btn save" href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Moatasem%20Sheha%0ATITLE:Chief%20Financial%20Officer%0AORG:Dynamic%20Business%20Solutions%20%7C%20NovaHR%0ATEL;TYPE=CELL:+201055000221%0AURL:https://www.linkedin.com/in/moatasem-sheeha%0ANOTE:CFO%20-%20Dynamic%20Business%20Solutions%20%7C%20NovaHR%0AEND:VCARD">
+                + Add Me to Contacts
+            </a>
+
+            <a class="btn whatsapp" href="https://wa.me/201055000221">
+                WhatsApp
+            </a>
+
+            <a class="btn call" href="tel:+201055000221">
+                Call
+            </a>
+
+            <a class="btn linkedin" href="https://www.linkedin.com/in/moatasem-sheeha">
+                LinkedIn
+            </a>
+        </div>
+
+        <div class="footer">
+            Scan the QR code to connect instantly.
+        </div>
+    </div>
+
+    <div class="corner-mark"></div>
+
+</div>
+
+</body>
+</html>
